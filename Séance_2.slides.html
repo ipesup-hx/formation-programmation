@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Séance_1 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Séance_2 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14659,7 +14659,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="S%C3%A9ance-1-:-Introduction-%C3%A0-la-programmation">S&#233;ance 1 : Introduction &#224; la programmation<a class="anchor-link" href="#S%C3%A9ance-1-:-Introduction-%C3%A0-la-programmation">&#182;</a></h1>
+<h1 id="S%C3%A9ance-2-:-D%C3%A9roulement-d'un-programme">S&#233;ance 2 : D&#233;roulement d'un programme<a class="anchor-link" href="#S%C3%A9ance-2-:-D%C3%A9roulement-d'un-programme">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14670,7 +14670,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2>
+<h2 id="Conditions">Conditions<a class="anchor-link" href="#Conditions">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14681,28 +14681,29 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-1-:-affichage-avec-print">Exercice 1 : affichage avec <code>print</code><a class="anchor-link" href="#Exercice-1-:-affichage-avec-print">&#182;</a></h4><p>Dans cette exercice, vous allez écrire directement dans un fichier python qui se nomme <code>main.py</code>.</p>
+<h4 id="Exercice-1-:-conditions">Exercice 1 : conditions<a class="anchor-link" href="#Exercice-1-:-conditions">&#182;</a></h4><p>Vous allez créer une calculatrice qui permettra d'effectuer une opération simple entre deux nombres. Vous devrez donc créer deux variables pour stocker les deux nombres, et une variable pour stocker le symbole qui représentera l'opération à effectuer. Vous devrez d'abord créer une structure conditionnelle qui vérifiera la validité des variables et du symbole. Ensuite, vous devrez créer une deuxième structure conditionnelle pour effectuer l'opération en fonction du symbole choisi.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li>Utilisez la fonctions <code>print</code> pour afficher la phrase <code>&quot;J'apprends Python !&quot;</code></li>
-<li>Calculez le résultat de <code>17 + 35 * 2</code> et affichez le résultat (Vous pouvez placer le calcul directement dans la fonction <code>print</code> pour l'afficher)</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-2-:-d%C3%A9claration-et-modification-de-variables">Exercice 2 : d&#233;claration et modification de variables<a class="anchor-link" href="#Exercice-2-:-d%C3%A9claration-et-modification-de-variables">&#182;</a></h4><ol>
-<li>Créez une variable nommée <code>nom</code> et attribuez-y votre <strong>nom</strong>.</li>
-<li>Créez une variable nommée <code>age</code> et attribuez-y votre <strong>âge</strong>.</li>
-<li>Affichez une phrase contenant votre <strong>nom</strong> et votre <strong>âge</strong> en utilisant les variables que vous venez de créer. Par exemple, <code>&quot;Je m'appelle Jean et j'ai 25 ans.&quot;</code> (Utilisez le f-string)</li>
-<li>Modifiez la valeur de la variable age pour ajouter <strong>10 ans</strong> à votre <strong>âge</strong> actuel.</li>
-<li>Affichez à nouveau la phrase contenant votre <strong>nom</strong> et votre <strong>âge</strong> en utilisant les variables mises à jour. Par exemple, <code>&quot;Je m'appelle Jean et j'ai 35 ans maintenant.&quot;</code> (Utilisez le f-string)</li>
+<li>Demandez à l'utilisateur de fournir deux nombres avec la fonction <code>input</code>. Stockez ces valeurs dans  <code>nombre1</code> et  <code>nombre2</code>.</li>
+<li><code>nombre1</code> et <code>nombre2</code> sont des chaînes de caractères (<code>str</code>). Utilisez la fonction  <code>isnumeric</code> pour vérifier que ce sont des nombres.</li>
+<li>Si ce n'est pas le cas, sortez du programme en générant une exception avec le mot clé <code>raise:raise SystemExit(&quot;Fin du programme&quot;)</code>.</li>
+<li>Sinon, convertissez les deux nombres en nombres entiers avec la fonction  int.</li>
+<li>Créez une variable <code>operation</code>et utilisez <code>input</code> pour obtenir l'opération souhaitée par l'utilisateur.</li>
+<li>Vérifiez que l'opération est valide (+, -, * ou /). Sinon, quittez le programme.</li>
+<li>Effectuez le calcul en fonction de la valeur de <code>operation</code> (par exemple en utilisant <code>if</code> - <code>elif</code> - <code>else</code>) et stockez le résultat dans la variable <code>resultat</code>.</li>
+<li>Attention, il est impossible de diviser un nombre par 0, il faut donc prévoir une structure conditionnelle supplémentaire pour quitter le programme si le deuxième nombre est 0.</li>
+<li>Astuce : lors de la division, utilisez la fonction <code>round</code> pour arrondir le résultat et le rendre plus lisible !</li>
+<li>Affichez le resultat.</li>
 </ol>
 
 </div>
@@ -14715,7 +14716,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2>
+<h2 id="Boucles">Boucles<a class="anchor-link" href="#Boucles">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14726,12 +14727,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-3-:-variables-de-type-non-mutable">Exercice 3 : variables de type non mutable<a class="anchor-link" href="#Exercice-3-:-variables-de-type-non-mutable">&#182;</a></h4><ol>
-<li>Définissez une variable <code>nom</code> contenant votre <strong>nom</strong> sous forme de chaîne de caractères.</li>
-<li>Définissez une variable <code>age</code> contenant votre <strong>âge</strong> sous forme d'un entier.</li>
-<li>Définissez une variable <code>taille</code> contenant votre <strong>taille</strong> sous forme d'un nombre à virgule flottante.</li>
-<li>Définissez une variable <code>est_etudiant</code> contenant une valeur booléenne et indiquant si vous êtes <strong>étudiant ou non</strong>.</li>
-</ol>
+<h4 id="Exercice-2-:-Boucles">Exercice 2 : Boucles<a class="anchor-link" href="#Exercice-2-:-Boucles">&#182;</a></h4><p>Vous allez maintenant écrire un programme qui calcule différentes statistiques pour un ensemble de nombres fourni par l'utilisateur. Cette tâche vous permettra de réviser les listes et d'aborder la nouvelle notion de ce chapitre : les boucles.</p>
 
 </div>
 </div>
@@ -14743,64 +14739,14 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="5">
-<li>Utilisez la fonction <code>print</code> pour afficher les valeurs des variables précédemment définies.</li>
-</ol>
-<p>Les prints doivent être sous la forme suivantes :</p>
-<ul>
-<li>&quot;Nom: <code>valeur de la variable nom</code>&quot;</li>
-<li>&quot;Age: <code>valeur de la variable age</code>&quot;</li>
-<li>&quot;Taille: <code>valeur de la variable taille</code>&quot;</li>
-<li>&quot;Est étudiant: <code>valeur de la variable est_etudiant</code>&quot;</li>
-</ul>
-<ol start="6">
-<li>Utilisez la fonction <code>type</code> pour afficher avec la fonction <code>print</code> les types des variables précédemment définies.</li>
-</ol>
-<p>Les prints doivent être sous la forme suivantes :</p>
-<ul>
-<li>&quot;Type nom: <code>type de la variable nom</code>&quot;</li>
-<li>&quot;Type age: <code>type de la variable age</code>&quot;</li>
-<li>&quot;Type taille: <code>type de la variable taille</code>&quot;</li>
-<li>&quot;Type est étudiant: <code>type de la variable est_etudiant</code>&quot;</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-4-:-listes">Exercice 4 : listes<a class="anchor-link" href="#Exercice-4-:-listes">&#182;</a></h4><ol>
-<li><strong>Créez</strong> une liste nommée <code>fruits</code> contenant les éléments <code>&quot;pomme&quot;</code>, <code>&quot;banane&quot;</code> et <code>&quot;orange&quot;</code>.</li>
-<li><strong>Ajoutez</strong> <code>&quot;kiwi&quot;</code> à la liste <code>fruits</code>.</li>
-<li><strong>Supprimez</strong> <code>&quot;orange&quot;</code> de la liste <code>fruits</code>.</li>
-<li><strong>Modifiez</strong> le <strong>deuxième</strong> élément de la liste <code>fruits</code> en <code>&quot;ananas&quot;</code>.</li>
-<li><strong>Affichez</strong> la <strong>longueur</strong> de la liste <code>fruits</code>.</li>
-<li><strong>Triez</strong> la liste <code>fruits</code> par ordre alphabétique</li>
-<li><strong>Affichez</strong> la liste. <em>(N'oubliez pas d'afficher la liste pour que les tests passent)</em></li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-5-:-dictionnaires">Exercice 5 : dictionnaires<a class="anchor-link" href="#Exercice-5-:-dictionnaires">&#182;</a></h4><ol>
-<li><strong>Créez</strong> un <strong>dictionnaire</strong> appelé <code>fruits</code> avec les clés <code>&quot;pomme&quot;</code>, <code>&quot;banane&quot;</code> et <code>&quot;orange&quot;</code>, et respectivement les valeurs <code>&quot;rouge&quot;</code>, <code>&quot;jaune&quot;</code> et <code>&quot;orange&quot;</code>.</li>
-<li><strong>Ajoutez</strong> la clé <code>&quot;kiwi&quot;</code> avec la valeur <code>&quot;vert&quot;</code> au dictionnaire <code>fruits</code>.</li>
-<li><strong>Accédez</strong> à la valeur correspondant à la clé <code>&quot;banane&quot;</code> et stockez-la dans une variable appelée <code>couleur_banane</code>.</li>
-<li><strong>Modifiez</strong> la valeur associée à la clé <code>&quot;pomme&quot;</code> pour <code>&quot;vert&quot;</code>.</li>
-<li><strong>Supprimez</strong> la clé <code>&quot;banane&quot;</code> du dictionnaire <code>fruits</code>.</li>
-<li><strong>Affichez</strong> les clés restantes dans le dictionnaire.</li>
+<ol>
+<li>Demandez à l'utilisateur de saisir une liste de nombres séparés par des virgules (par exemple : &quot;1,2,3,4&quot;).</li>
+<li>Stockez cette valeur dans une variable <code>nombres</code>. <code>nombres</code> est une chaîne de caractères (<code>str</code>).</li>
+<li>Utilisez la fonction <code>split</code> pour transformer cette chaîne de caractères en une variable <code>liste</code> de type liste. <code>liste</code> est une liste de chaînes de caractères.</li>
+<li>Transformez <code>liste</code> en une liste d'entiers <code>liste_entiers</code>, en utilisant la fonction <code>int</code>. Vous devrez convertir chaque élément un par un ! Utilisez une boucle.</li>
+<li>Calculez et affichez la somme des nombres dans la liste.</li>
+<li>Calculez et affichez la moyenne des nombres dans la liste.</li>
+<li>Calculez et affichez le nombre de nombres dans la liste qui sont supérieurs à la moyenne.</li>
 </ol>
 
 </div>

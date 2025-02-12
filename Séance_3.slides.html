@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Séance_1 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Séance_3 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14659,7 +14659,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="S%C3%A9ance-1-:-Introduction-%C3%A0-la-programmation">S&#233;ance 1 : Introduction &#224; la programmation<a class="anchor-link" href="#S%C3%A9ance-1-:-Introduction-%C3%A0-la-programmation">&#182;</a></h1>
+<h1 id="S%C3%A9ance-3-:-Organiser-son-code-:-fonctions-et-principes-de-programmation">S&#233;ance 3 : Organiser son code : fonctions et principes de programmation<a class="anchor-link" href="#S%C3%A9ance-3-:-Organiser-son-code-:-fonctions-et-principes-de-programmation">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14670,7 +14670,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2>
+<h2 id="Fonctions">Fonctions<a class="anchor-link" href="#Fonctions">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14681,28 +14681,26 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-1-:-affichage-avec-print">Exercice 1 : affichage avec <code>print</code><a class="anchor-link" href="#Exercice-1-:-affichage-avec-print">&#182;</a></h4><p>Dans cette exercice, vous allez écrire directement dans un fichier python qui se nomme <code>main.py</code>.</p>
+<h4 id="Exercice-1-:-organiser-son-code-%C3%A0-l'aide-des-fonctions">Exercice 1 : organiser son code &#224; l'aide des fonctions<a class="anchor-link" href="#Exercice-1-:-organiser-son-code-%C3%A0-l'aide-des-fonctions">&#182;</a></h4><p>Vous devez créer un programme qui calcule le salaire horaire d'un employé, en fonction de son salaire mensuel et de son nombre d'heures travaillées par semaine. Le programme doit utiliser des fonctions pour effectuer les calculs.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li>Utilisez la fonctions <code>print</code> pour afficher la phrase <code>&quot;J'apprends Python !&quot;</code></li>
-<li>Calculez le résultat de <code>17 + 35 * 2</code> et affichez le résultat (Vous pouvez placer le calcul directement dans la fonction <code>print</code> pour l'afficher)</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-2-:-d%C3%A9claration-et-modification-de-variables">Exercice 2 : d&#233;claration et modification de variables<a class="anchor-link" href="#Exercice-2-:-d%C3%A9claration-et-modification-de-variables">&#182;</a></h4><ol>
-<li>Créez une variable nommée <code>nom</code> et attribuez-y votre <strong>nom</strong>.</li>
-<li>Créez une variable nommée <code>age</code> et attribuez-y votre <strong>âge</strong>.</li>
-<li>Affichez une phrase contenant votre <strong>nom</strong> et votre <strong>âge</strong> en utilisant les variables que vous venez de créer. Par exemple, <code>&quot;Je m'appelle Jean et j'ai 25 ans.&quot;</code> (Utilisez le f-string)</li>
-<li>Modifiez la valeur de la variable age pour ajouter <strong>10 ans</strong> à votre <strong>âge</strong> actuel.</li>
-<li>Affichez à nouveau la phrase contenant votre <strong>nom</strong> et votre <strong>âge</strong> en utilisant les variables mises à jour. Par exemple, <code>&quot;Je m'appelle Jean et j'ai 35 ans maintenant.&quot;</code> (Utilisez le f-string)</li>
+<li>Créez une fonction appelée <code>salaire_mensuel(salaire_annuel)</code> qui prend en paramètre un salaire annuel et retourne le salaire mensuel correspondant en divisant le salaire annuel par 12.</li>
+<li>Créez une fonction appelée <code>salaire_hebdomadaire(salaire_mensuel)</code> qui prend en paramètre un salaire mensuel et retourne le salaire hebdomadaire correspondant en divisant le salaire mensuel par 4.</li>
+<li>Créez une fonction appelée <code>salaire_horaire(salaire_hebdomadaire, heures_travaillees)</code> qui prend en paramètres un salaire hebdomadaire et le nombre d'heures travaillées par semaine, et retourne le salaire horaire correspondant en divisant le salaire hebdomadaire par le nombre d'heures travaillées par semaine.</li>
+<li>Demandez à l'utilisateur de saisir son salaire annuel.</li>
+<li>Demandez à l'utilisateur de saisir le nombre d'heures travaillées par semaine.</li>
+<li>Appelez les fonctions précédemment créées pour calculer le salaire horaire correspondant.</li>
+<li>Affichez le résultat sous la forme : &quot;Votre salaire horaire est de XX euros&quot;.</li>
 </ol>
 
 </div>
@@ -14715,7 +14713,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2>
+<h2 id="Principes-de-programmation">Principes de programmation<a class="anchor-link" href="#Principes-de-programmation">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14726,16 +14724,75 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-3-:-variables-de-type-non-mutable">Exercice 3 : variables de type non mutable<a class="anchor-link" href="#Exercice-3-:-variables-de-type-non-mutable">&#182;</a></h4><ol>
-<li>Définissez une variable <code>nom</code> contenant votre <strong>nom</strong> sous forme de chaîne de caractères.</li>
-<li>Définissez une variable <code>age</code> contenant votre <strong>âge</strong> sous forme d'un entier.</li>
-<li>Définissez une variable <code>taille</code> contenant votre <strong>taille</strong> sous forme d'un nombre à virgule flottante.</li>
-<li>Définissez une variable <code>est_etudiant</code> contenant une valeur booléenne et indiquant si vous êtes <strong>étudiant ou non</strong>.</li>
-</ol>
+<h3 id="DRY-:-Don't-Repeat-Yourself">DRY : <em>Don't Repeat Yourself</em><a class="anchor-link" href="#DRY-:-Don't-Repeat-Yourself">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Supposons que vous vouliez calculer le salaire net à partir du salaire brut, pour plusieurs employés. Plutôt que de faire :</p>
 
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">salaire_brut_Jean</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">salaire_brut_Max</span> <span class="o">=</span> <span class="mi">2500</span>
+<span class="n">salaire_brut_Marie</span> <span class="o">=</span> <span class="mi">3000</span>
+
+<span class="n">tickets_restau_Jean</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">tickets_restau_Max</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">tickets_restau_Marie</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">salaire_net_Jean</span> <span class="o">=</span> <span class="n">salaire_brut_Jean</span><span class="o">*</span><span class="mf">0.8</span> <span class="o">-</span> <span class="n">tickets_restau_Jean</span>
+<span class="n">salaire_net_Max</span> <span class="o">=</span> <span class="n">salaire_brut_Jean</span><span class="o">*</span><span class="mf">0.8</span> <span class="o">-</span> <span class="n">tickets_restau_Max</span>
+<span class="n">salaire_net_Marie</span> <span class="o">=</span> <span class="n">salaire_brut_Jean</span><span class="o">*</span><span class="mf">0.8</span> <span class="o">-</span> <span class="n">tickets_restau_Marie</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">salaire_net_Jean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">salaire_net_Max</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">salaire_net_Marie</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1550.0
+1550.0
+1570.0
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14743,70 +14800,196 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="5">
-<li>Utilisez la fonction <code>print</code> pour afficher les valeurs des variables précédemment définies.</li>
-</ol>
-<p>Les prints doivent être sous la forme suivantes :</p>
+<p>on fera plutôt :</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">salaires_bruts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Jean&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+    <span class="s2">&quot;Max&quot;</span><span class="p">:</span> <span class="mi">2500</span><span class="p">,</span>
+    <span class="s2">&quot;Marie&quot;</span><span class="p">:</span> <span class="mi">3000</span>
+<span class="p">}</span>
+
+<span class="n">tickets_restau</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Jean&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">&quot;Max&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">&quot;Marie&quot;</span><span class="p">:</span> <span class="mi">30</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">salaire_net</span><span class="p">(</span><span class="n">salaire_brut</span><span class="p">,</span> <span class="n">tickets_restau</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">salaire_brut</span><span class="o">*</span><span class="mf">0.8</span> <span class="o">-</span> <span class="n">tickets_restau</span>
+
+<span class="n">salaires_nets</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">salarié</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Jean&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Marie&quot;</span><span class="p">]:</span>
+    <span class="n">salaires_nets</span><span class="p">[</span><span class="n">salarié</span><span class="p">]</span> <span class="o">=</span> <span class="n">salaire_net</span><span class="p">(</span>
+        <span class="n">salaires_bruts</span><span class="p">[</span><span class="n">salarié</span><span class="p">],</span>
+        <span class="n">tickets_restau</span><span class="p">[</span><span class="n">salarié</span><span class="p">]</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">salaires_nets</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;Jean&#39;: 1550.0, &#39;Max&#39;: 1950.0, &#39;Marie&#39;: 2370.0}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Principe-de-responsabilit%C3%A9-unique">Principe de responsabilit&#233; unique<a class="anchor-link" href="#Principe-de-responsabilit%C3%A9-unique">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Mettons que vous vouliez calculer les taux de conversion pour plusieurs campagnes, et sauvegarder les données dans un fichier CSV.</p>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Au lieu d’appeler une fonction <code>calculer_taux_de_conversion_sauvegarder_csv()</code>, nous allons séparer deux tâches en fonctions séparées :</p>
 <ul>
-<li>&quot;Nom: <code>valeur de la variable nom</code>&quot;</li>
-<li>&quot;Age: <code>valeur de la variable age</code>&quot;</li>
-<li>&quot;Taille: <code>valeur de la variable taille</code>&quot;</li>
-<li>&quot;Est étudiant: <code>valeur de la variable est_etudiant</code>&quot;</li>
-</ul>
-<ol start="6">
-<li>Utilisez la fonction <code>type</code> pour afficher avec la fonction <code>print</code> les types des variables précédemment définies.</li>
-</ol>
-<p>Les prints doivent être sous la forme suivantes :</p>
-<ul>
-<li>&quot;Type nom: <code>type de la variable nom</code>&quot;</li>
-<li>&quot;Type age: <code>type de la variable age</code>&quot;</li>
-<li>&quot;Type taille: <code>type de la variable taille</code>&quot;</li>
-<li>&quot;Type est étudiant: <code>type de la variable est_etudiant</code>&quot;</li>
+<li><code>calculer_taux_de_conversion()</code></li>
+<li><code>sauvegarder_csv()</code></li>
 </ul>
 
 </div>
 </div>
 </div>
-</div></section><section >
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-4-:-listes">Exercice 4 : listes<a class="anchor-link" href="#Exercice-4-:-listes">&#182;</a></h4><ol>
-<li><strong>Créez</strong> une liste nommée <code>fruits</code> contenant les éléments <code>&quot;pomme&quot;</code>, <code>&quot;banane&quot;</code> et <code>&quot;orange&quot;</code>.</li>
-<li><strong>Ajoutez</strong> <code>&quot;kiwi&quot;</code> à la liste <code>fruits</code>.</li>
-<li><strong>Supprimez</strong> <code>&quot;orange&quot;</code> de la liste <code>fruits</code>.</li>
-<li><strong>Modifiez</strong> le <strong>deuxième</strong> élément de la liste <code>fruits</code> en <code>&quot;ananas&quot;</code>.</li>
-<li><strong>Affichez</strong> la <strong>longueur</strong> de la liste <code>fruits</code>.</li>
-<li><strong>Triez</strong> la liste <code>fruits</code> par ordre alphabétique</li>
-<li><strong>Affichez</strong> la liste. <em>(N'oubliez pas d'afficher la liste pour que les tests passent)</em></li>
-</ol>
-
+<h2 id="Documentation-du-code">Documentation du code<a class="anchor-link" href="#Documentation-du-code">&#182;</a></h2>
 </div>
 </div>
 </div>
-</div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-5-:-dictionnaires">Exercice 5 : dictionnaires<a class="anchor-link" href="#Exercice-5-:-dictionnaires">&#182;</a></h4><ol>
-<li><strong>Créez</strong> un <strong>dictionnaire</strong> appelé <code>fruits</code> avec les clés <code>&quot;pomme&quot;</code>, <code>&quot;banane&quot;</code> et <code>&quot;orange&quot;</code>, et respectivement les valeurs <code>&quot;rouge&quot;</code>, <code>&quot;jaune&quot;</code> et <code>&quot;orange&quot;</code>.</li>
-<li><strong>Ajoutez</strong> la clé <code>&quot;kiwi&quot;</code> avec la valeur <code>&quot;vert&quot;</code> au dictionnaire <code>fruits</code>.</li>
-<li><strong>Accédez</strong> à la valeur correspondant à la clé <code>&quot;banane&quot;</code> et stockez-la dans une variable appelée <code>couleur_banane</code>.</li>
-<li><strong>Modifiez</strong> la valeur associée à la clé <code>&quot;pomme&quot;</code> pour <code>&quot;vert&quot;</code>.</li>
-<li><strong>Supprimez</strong> la clé <code>&quot;banane&quot;</code> du dictionnaire <code>fruits</code>.</li>
-<li><strong>Affichez</strong> les clés restantes dans le dictionnaire.</li>
-</ol>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction calcule la somme de deux nombres et retourne le résultat.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    a (int): le premier nombre</span>
+<span class="sd">    b (int): le deuxième nombre</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    int: la somme de a et b</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">somme</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Help on function somme in module __main__:
+
+somme(a, b)
+    Cette fonction calcule la somme de deux nombres et retourne le résultat.
+    
+    Parameters:
+    a (int): le premier nombre
+    b (int): le deuxième nombre
+    
+    Returns:
+    int: la somme de a et b
+
+</pre>
+</div>
+</div>
 
 </div>
+
 </div>
-</div>
-</div></section></section>
+
+</div></div></section></section>
 </div>
 </div>
 </body>
