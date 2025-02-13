@@ -1,6 +1,7 @@
 theme: minima
 title: Initiation à la programmation et à l'automatisation
 author: © Laurent Attias - Ipesup, 2025
+favicon: "/favicon.png"
 description: 
 locale: fr
 jekyll-feed:
