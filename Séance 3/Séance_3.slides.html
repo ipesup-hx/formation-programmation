@@ -14681,7 +14681,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exercice-1-:-organiser-son-code-%C3%A0-l'aide-des-fonctions">Exercice 1 : organiser son code &#224; l'aide des fonctions<a class="anchor-link" href="#Exercice-1-:-organiser-son-code-%C3%A0-l'aide-des-fonctions">&#182;</a></h4><p>Vous devez créer un programme qui calcule le salaire horaire d'un employé, en fonction de son salaire mensuel et de son nombre d'heures travaillées par semaine. Le programme doit utiliser des fonctions pour effectuer les calculs.</p>
+<h4 id="Exercice-1-:-calcul-du-salaire-horaire">Exercice 1 : calcul du salaire horaire<a class="anchor-link" href="#Exercice-1-:-calcul-du-salaire-horaire">&#182;</a></h4><p>Vous devez créer un programme qui calcule le salaire horaire d'un employé, en fonction de son salaire annuel et de son nombre d'heures travaillées par semaine. Le programme doit utiliser des fonctions pour effectuer les calculs.</p>
 
 </div>
 </div>
@@ -14706,7 +14706,550 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section></section><section ><section >
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Exercice-2-:-Formatage-de-facture">Exercice 2 : Formatage de facture<a class="anchor-link" href="#Exercice-2-:-Formatage-de-facture">&#182;</a></h4><p>Vous devez créer un programme qui formate les informations d'une facture à partir des informations suivantes : numéro de facture, nom du client, montant HT, taux de TVA. On souhaite afficher un récapitulatif de la facture sous le format présenté en exemple ci-dessous :</p>
+<p>Facture #20240301<br />
+Client : Entreprise ABC<br />
+Montant HT : 1000.0 €<br />
+TVA (20%) : 200.0 €<br />
+Montant TTC : 1200.0 €</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Ecrire une fonction qui prend en entrée le montant HT et le taux de TVA et renvoie la TVA et le montant TTC.</li>
+<li>Ecrire la fonction de formatage.<br />
+<em>On utilisera <code>\n</code> pour sauter une ligne dans une chaîne de caractères</em></li>
+</ol>
+<p>Rappel : les <code>f</code>-strings permettent de faciliter les remplacements dans les chaînes de caractères.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Votre gestionnaire de facturation vous fournit un ensemble de factures sous la forme d'une liste de dictionnaires de la forme suivante :</p>
+<p>{
+    &quot;numero&quot;: &lt;numéro de facture&gt;,<br />
+    &quot;client&quot;: &lt;nom du client&gt;,<br />
+    &quot;montant HT&quot;: &lt;montant HT&gt;,<br />
+    &quot;taux TVA&quot;: &lt;taux TVA&gt;<br />
+}</p>
+<p>Les valeurs &lt;numéro de facture&gt; et &lt;nom du client&gt; sont des chaînes de caractères. Les valeurs &lt;montant HT&gt; et &lt;taux TVA&gt; sont des flottants.</p>
+<p>La liste des factures est disponible dans le notebook.</p>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>(et, pour la curiosité, le script qui a permis de les générer) :</p>
+
+</div>
+</div>
+</div>
+</div>
+</aside><aside class="notes">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">faker</span>
+
+<span class="k">def</span> <span class="nf">generer_factures</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">fake</span> <span class="o">=</span> <span class="n">faker</span><span class="o">.</span><span class="n">Faker</span><span class="p">(</span><span class="s2">&quot;fr_FR&quot;</span><span class="p">)</span>
+    <span class="n">factures</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">facture</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;numero&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">unique</span><span class="o">.</span><span class="n">random_int</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">20240001</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">20249999</span><span class="p">),</span>
+            <span class="s2">&quot;client&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">company</span><span class="p">(),</span>
+            <span class="s2">&quot;montant HT&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="s2">&quot;taux TVA&quot;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+        <span class="p">}</span>
+        <span class="n">factures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">facture</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">factures</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+</aside><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">facture</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244452</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Gosselin Dos Santos et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8778.79</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><aside class="notes">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">factures</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244452</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Gosselin Dos Santos et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8778.79</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242729</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Mace&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3470.43</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248771</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Martinez&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4950.61</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241392</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Muller&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9950.91</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20246097</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Benoit&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2706.19</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242300</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Foucher Bousquet S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3899.58</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245848</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Ribeiro Garnier S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">1814.67</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245305</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Leroux Renaud SA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">5875.04</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241484</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Picard&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4086.73</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248391</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Charles S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">941.18</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248780</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Rivière S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4454.4</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242597</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Mercier&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6045.26</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248269</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Petit&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8753.49</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248098</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Raynaud&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4684.33</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243988</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Lenoir&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6227.34</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242858</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Tessier S.A.R.L.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">1534.66</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242350</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6268.54</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243698</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Nguyen SA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8516.23</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247160</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Bourgeois&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6390.43</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247540</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Marin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">5278.39</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240781</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Schmitt SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">1043.55</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247546</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Simon S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8471.32</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244303</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Gaudin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8176.46</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249636</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Descamps&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7452.39</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249539</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Rossi&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">5003.25</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241588</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Gaillard Morel SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9696.87</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247123</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Gallet&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">927.54</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20246981</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Robin Gaillard S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9539.06</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247872</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Simon Payet S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">554.84</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20246818</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Bourdon Gilbert S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">951.49</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241171</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Auger&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9560.91</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241430</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Morin et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7695.91</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244655</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Bernard Guillaume SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">1645.85</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243662</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Michel&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8123.07</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247710</span><span class="p">,</span> <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Rémy&#39;</span><span class="p">,</span> <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9798.22</span><span class="p">,</span> <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249753</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;David&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3247.04</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241061</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Colas&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6329.13</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243200</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Maillard et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3819.43</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249393</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Perez&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3841.04</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247419</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Martinez SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6623.12</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249930</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Blanchard&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7973.47</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242364</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Masse&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2482.99</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248037</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Munoz&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2979.09</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240446</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Lopes&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">5507.63</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245634</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Charrier&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">751.31</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243920</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Clément SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9283.58</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240079</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Roy Royer SA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2763.9</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240712</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Carpentier&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3176.83</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249486</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Le Roux&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4350.9</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245074</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Dumas&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9061.64</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247460</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Duhamel&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4679.38</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248686</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Da Silva&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">335.32</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245055</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Richard S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8663.08</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245356</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Royer&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">1978.93</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247246</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Brun S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4890.25</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247978</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Normand Richard SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3657.34</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245050</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Riou&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">5627.98</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20246217</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Leblanc&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3184.5</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247616</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Leclercq Rossi S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8257.49</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242070</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Guichard S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9226.97</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249889</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Chauvet&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9297.08</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244355</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Leconte&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8342.72</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243435</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Cohen&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2058.36</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248838</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Gros&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3439.34</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244702</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Diallo et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4355.85</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242190</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Benard Legrand SA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9710.91</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244459</span><span class="p">,</span> <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">5919.4</span><span class="p">,</span> <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244244</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Seguin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9006.82</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249852</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Chartier&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2361.08</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241594</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Durand et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3762.16</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247559</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Lagarde SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8577.99</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242529</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Cordier SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6947.33</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242305</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Alexandre et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4694.4</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20246522</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Raymond Coste et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3049.51</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245466</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Masson&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7206.46</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245712</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Delannoy Pierre SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7528.48</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245385</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Godard S.A.R.L.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3840.38</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240243</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Weiss Brunet S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2454.02</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249396</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Hardy S.A.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7855.39</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240896</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Vaillant S.A.R.L.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">1834.61</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240843</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Godard&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2787.79</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245277</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Delannoy S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9284.81</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20241329</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Albert et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">8232.96</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243675</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Teixeira SA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9916.79</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245570</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Gaillard Rousseau S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7166.78</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243683</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Cousin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9794.78</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248931</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Klein&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">5253.24</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245077</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Pages Brun SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9498.28</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248298</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Turpin&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">4029.84</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20248167</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Da Costa Leleu SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6476.55</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245959</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Vallet&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6755.78</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20247344</span><span class="p">,</span> <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Lenoir&#39;</span><span class="p">,</span> <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">812.8</span><span class="p">,</span> <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20246943</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Hubert Vaillant S.A.R.L.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">876.39</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20249214</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Coulon SARL&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">2527.8</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20242357</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Mace S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">9188.35</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20245951</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Michaud&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">1846.91</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244819</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Grenier Pereira S.A.R.L.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">269.71</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20243830</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Lejeune&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">6816.79</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20244011</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Normand Lenoir et Fils&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">7911.45</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;numero&#39;</span><span class="p">:</span> <span class="mi">20240868</span><span class="p">,</span>
+  <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;Bonnet S.A.S.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;montant HT&#39;</span><span class="p">:</span> <span class="mf">3732.36</span><span class="p">,</span>
+  <span class="s1">&#39;taux TVA&#39;</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">}]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+</aside><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="3">
+<li>Afficher l'ensemble de ces factures formatées selon les spécifications des questions 1. et 2. On séparera chaque facture par une ligne composée de tirets.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
