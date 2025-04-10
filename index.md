@@ -31,3 +31,6 @@ title: Ressources
 - <a href="https://drive.google.com/drive/folders/1VN5r-zFR_8fWeecBxfOMp68m4n_3ejYG?usp=sharing" target="_blank">drive</a>
 
 ## Séance 4 : Structures de données et gestion de fichiers
+
+- <a href="Séance 4/Séance_4.slides.html" target="_blank">slides</a>
+- <a href="https://drive.google.com/drive/folders/1LATZM356Fe1-NTnYdscht_CyXq60ILl-?usp=sharing" target="_blank">drive</a>
